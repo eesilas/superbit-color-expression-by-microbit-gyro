@@ -1,9 +1,3 @@
-input.onButtonPressed(Button.A, function () {
-    gyro_x += 5
-})
-input.onButtonPressed(Button.B, function () {
-    gyro_x += -5
-})
 basic.showIcon(IconNames.Chessboard)
 let gyro_x = 120
 let gyro_y = 129
@@ -15,6 +9,11 @@ SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Yellow))
 basic.pause(500)
 SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Purple))
 basic.pause(500)
+basic.clearScreen()
+basic.showIcon(IconNames.Diamond)
 basic.forever(function () {
     SuperBit.RGB_Program().showColor(neopixel.hsl(gyro_x, gyro_y, gyro_z))
+    gyro_x = Math.trunc(input.acceleration(Dimension.X) / 5)
+    gyro_y = Math.trunc(input.acceleration(Dimension.Y) / 5)
+    gyro_z = Math.trunc(input.acceleration(Dimension.Z) / 5)
 })
