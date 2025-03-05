@@ -9,8 +9,6 @@ SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Yellow))
 basic.pause(500)
 SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Purple))
 basic.pause(500)
-basic.clearScreen()
-basic.showIcon(IconNames.Diamond)
 basic.forever(function () {
     SuperBit.RGB_Program().showColor(neopixel.hsl(gyro_x, gyro_y, gyro_z))
     gyro_x = Math.trunc(input.acceleration(Dimension.X) / 5)
