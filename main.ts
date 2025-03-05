@@ -11,7 +11,7 @@ SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Purple))
 basic.pause(500)
 basic.forever(function () {
     SuperBit.RGB_Program().showColor(neopixel.hsl(gyro_x, gyro_y, gyro_z))
-    gyro_x = input.acceleration(Dimension.X)
-    gyro_y = input.acceleration(Dimension.Y)
-    gyro_z = input.acceleration(Dimension.Z)
+    gyro_x = input.acceleration(Dimension.X) + 5
+    gyro_y = input.acceleration(Dimension.Y) + 0
+    gyro_z = input.acceleration(Dimension.Z) + 0
 })
